@@ -8,10 +8,16 @@ function generateGrid() {
     }
 }
 
-const grid = document.querySelector('div')
+// const grid = document.querySelector('div')
 
-function changeColor() {
-    grid.style.backgroundColor = "gray";
+const container = document.querySelector('#container');
+
+function changeColor(eventObject) {
+    console.log(eventObject)
+    if (eventObject.currentTarget != eventObject.target) {
+        
+        eventObject.target.style.backgroundColor = "gray";
+    }
 }
 
-container.addEventListener('mouseover', changeColor);
+container.addEventListener('mouseover', changeColor, true);
