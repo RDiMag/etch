@@ -1,7 +1,7 @@
 document.body.onload = generateGrid();
 
-function generateGrid() {
-    for(let i = 0; i < 256; i++) {
+function generateGrid(num1, num2) {
+    for(let i = 0; i < num1 + num2; i++) {
         let div = document.createElement('div');
         let container = document.getElementById('container');
        container.appendChild(div);
@@ -21,3 +21,11 @@ function changeColor(eventObject) {
 }
 
 container.addEventListener('mouseover', changeColor, true);
+
+const restartButton = document.querySelector('button');
+
+restartButton.addEventListener("click", clearGrid); 
+
+function clearGrid() {
+    prompt("How many squares for each side of the grid?")
+}
