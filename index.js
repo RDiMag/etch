@@ -8,10 +8,10 @@ function generateGrid() {
     }
 }
 
-let div = document.querySelector('div')
+const grid = document.querySelector('div')
 
-div.addEventListener('mouseover', function() {
-    document.querySelector('div').style.backgroundColor = "blue"
-})
+function changeColor() {
+    grid.style.backgroundColor = "gray";
+}
 
-
+container.addEventListener('mouseover', changeColor);
