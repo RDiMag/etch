@@ -27,5 +27,20 @@ const restartButton = document.querySelector('button');
 restartButton.addEventListener("click", clearGrid); 
 
 function clearGrid() {
-    prompt("How many squares for each side of the grid?")
+    let num = prompt("Enter a number between 2-100.", "");
+    num = parseInt(num);
+    if (num <= 1) {
+      clearGrid();
+    }
+    else if (num >= 100) {
+        clearGrid();
+    }
+    else {
+        createGrid();
+    }
+    
+}
+
+function createGrid() {
+    
 }
