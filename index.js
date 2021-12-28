@@ -1,7 +1,7 @@
 document.body.onload = generateGrid();
 
-function generateGrid(num1, num2) {
-    for(let i = 0; i < num1 + num2; i++) {
+function generateGrid() {
+    for(let i = 0; i < 128; i++) {
         let div = document.createElement('div');
         let container = document.getElementById('container');
        container.appendChild(div);
@@ -22,9 +22,11 @@ function changeColor(eventObject) {
 
 container.addEventListener('mouseover', changeColor, true);
 
-const restartButton = document.querySelector('button');
+let restartButton = document.querySelector('button');
 
 restartButton.addEventListener("click", clearGrid); 
+
+
 
 function clearGrid() {
     let num = prompt("Enter a number between 2-100.", "");
@@ -36,11 +38,11 @@ function clearGrid() {
         clearGrid();
     }
     else {
-        createGrid();
-    }
-    
+        console.log(num);
+    //     for(let i = 0; i < num; i++) {
+    //         let div = document.createElement('div');
+    //         let container = document.getElementById('container');
+    //        container.appendChild(div);
+    // }
 }
-
-function createGrid() {
-    
 }
