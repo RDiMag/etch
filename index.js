@@ -1,7 +1,7 @@
 document.body.onload = generateGrid();
 
 function generateGrid() {
-    for(let i = 0; i < 128; i++) {
+    for(let i = 0; i < 256; i++) {
         let div = document.createElement('div');
         let container = document.getElementById('container');
        container.appendChild(div);
@@ -27,6 +27,7 @@ let restartButton = document.getElementById('newGrid');
 restartButton.addEventListener("click", newGrid); 
 
 function newGrid() {
+    clearGrid();
     let num = prompt("Enter a number between 2-100.", "");
     num = parseInt(num);
     if (num <= 1) {
