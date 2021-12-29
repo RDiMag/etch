@@ -37,7 +37,7 @@ function newGrid() {
     }
     else {
         console.log(num);
-        for(let i = 0; i < num; i++) {
+        for(let i = 0; i < num * num; i++) {
             let div = document.createElement('div');
             let container = document.getElementById('container');
            container.appendChild(div);
