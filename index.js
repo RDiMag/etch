@@ -22,27 +22,36 @@ function changeColor(eventObject) {
 
 container.addEventListener('mouseover', changeColor, true);
 
-let restartButton = document.querySelector('button');
+let restartButton = document.getElementById('newGrid');
 
-restartButton.addEventListener("click", clearGrid); 
+restartButton.addEventListener("click", newGrid); 
 
-
-
-function clearGrid() {
+function newGrid() {
     let num = prompt("Enter a number between 2-100.", "");
     num = parseInt(num);
     if (num <= 1) {
-      clearGrid();
+      newGrid();
     }
     else if (num >= 100) {
-        clearGrid();
+        newGrid();
     }
     else {
         console.log(num);
-    //     for(let i = 0; i < num; i++) {
-    //         let div = document.createElement('div');
-    //         let container = document.getElementById('container');
-    //        container.appendChild(div);
-    // }
+        for(let i = 0; i < num; i++) {
+            let div = document.createElement('div');
+            let container = document.getElementById('container');
+           container.appendChild(div);
+    }
 }
+}
+
+let clearButton = document.getElementById('clearGrid');
+
+clearButton.addEventListener("click", clearGrid);
+
+function clearGrid() {
+    let divsToRemove = document.querySelectorAll('div');
+        for (let i = divsToRemove.length-1; i >= 0; i--) {
+            divsToRemove[i].remove();
+        }
 }
