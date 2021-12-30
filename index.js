@@ -8,9 +8,8 @@ function generateGrid() {
     }
 }
 
-// const grid = document.querySelector('div')
 
-const container = document.querySelector('#container');
+let container = document.querySelector('#container');
 
 function changeColor(eventObject) {
     console.log(eventObject)
@@ -21,6 +20,8 @@ function changeColor(eventObject) {
 }
 
 container.addEventListener('mouseover', changeColor, true);
+
+// This section allows the user to create a new grid and input the number of squares per side.
 
 let restartButton = document.getElementById('newGrid');
 
@@ -37,14 +38,18 @@ function newGrid() {
         newGrid();
     }
     else {
-        console.log(num);
+        let newContainer = document.getElementById('container');
+            newContainer.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
+            newContainer.style.gridTemplateRows = `repeat(${num}, 1fr)`;
+
         for(let i = 0; i < num * num; i++) {
-            let div = document.createElement('div');
-            let container = document.getElementById('container');
-           container.appendChild(div);
+            let div = document.createElement('div');   
+           newContainer.appendChild(div);
     }
 }
 }
+
+// clearButton deletes the existing grid.
 
 let clearButton = document.getElementById('clearGrid');
 
